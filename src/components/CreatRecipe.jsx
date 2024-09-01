@@ -81,7 +81,7 @@ const CreatRecipe = () => {
                     </div>
                 </div>
             </div>
-            <button className="btnForm">Créer la recette</button>
+            <button className="btn-form">Créer la recette</button>
         </div>
     )
 }

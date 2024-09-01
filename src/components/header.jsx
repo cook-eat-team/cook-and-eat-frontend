@@ -35,15 +35,17 @@ const Header = () => {
             <div className="dropdown dropdown-end">
               <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img
-                    alt="Profile"
-                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                  />
+                  <Link to='/account'>
+                    <img
+                      alt="Profile"
+                      src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                    />
+                  </Link>
                 </div>
               </div>
             </div>
             <a className="btn"><Link to="/register">Créer un compte</Link></a>
-            <a className="btn">Logout</a>
+            <a className="btn"><Link to='/logout'>Logout</Link></a>
           </div>
         </div>
       </header>
