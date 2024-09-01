@@ -8,6 +8,7 @@ import Account from './views/Account';
 import Dashboard from './views/Dashboard';
 import AddRecipe from './views/AddRecipe';
 import ShowRecipe from "./views/ShowRecipe";
+import Register from './components/FormRegister';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/addRecipe" element={<AddRecipe />} />
         <Route path="/showRecipe" element={<ShowRecipe />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
       <Footer />
     </Router>
