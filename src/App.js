@@ -5,7 +5,6 @@ import Homepage from './views/Homepage';
 import Header from './components/header';
 import Footer from './components/Footer';
 import Account from './views/Account';
-import Recipes from './views/Recipes';
 import Dashboard from './views/Dashboard';
 import AddRecipe from './views/AddRecipe';
 import ShowRecipe from "./views/ShowRecipe";
@@ -17,7 +16,6 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/recipes" element={<Recipes />} />
         <Route path="/account" element={<Account />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/addRecipe" element={<AddRecipe />} />

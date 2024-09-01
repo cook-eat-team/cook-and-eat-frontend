@@ -10,8 +10,8 @@ const ShowRecipe = () => {
             <div className="desciption-title">
                 (time) min . (nb) serve
             </div>
-            <div className="image">
-                <img src="../images/Tartiflette.jpg" alt="Tartiflette" />
+            <div className="container-image">
+                <img src="../images/Tartiflette.jpg" alt="Tartiflette" className="image"/>
             </div>
             <div className="block-text">
                 <div className="instructions">

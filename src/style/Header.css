@@ -1,8 +1,8 @@
 .navbar{
     background-color: var(--background);
-    border: 1px solid var(--black);
+    border: 1px solid var(--grey);
     border-radius: 15px;
-    color: var(--color3);
+    color: var(--black);
     width: 100%;
     margin: 20px 0 50px 0;
 }
