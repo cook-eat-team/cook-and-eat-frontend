@@ -3,9 +3,11 @@
 @tailwind utilities;
 
 :root{
-  --color1: #F29C33;
-  --color2: #FFF4CC;
-  --color3: #262522;
+  --orange: #F29C33;
+  --peach: #FFCF94;
+  --cream: #FFF4CC;
+  --black: #262522;
+  --background: #FFFBF2;
 }
 
 .App {
