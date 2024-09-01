@@ -1,0 +1,19 @@
+.card{
+    border-radius: 20px;
+    background-color: var(--cream);
+    margin-top: 100px;
+}
+.text-card{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    line-height: 1.5;
+    max-height: calc(1.5em * 3);
+}
+.btn{
+    border: 1px solid var(--black);
+    background-color: transparent;
+    color: var(--black);
+    border-radius: 50px;
+}
