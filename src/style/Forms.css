@@ -3,14 +3,14 @@ input{
     border: 1px solid black;
 }
 .input-bordered{
-    border: 2px solid var(--color1);
+    border: 2px solid var(--orange);
 
 }
 select{
     margin-bottom: 10%;
 }
 .select-bordered{
-    border: 2px solid var(--color1);
+    border: 2px solid var(--orange);
 }
 .block{
     display: flex;
@@ -62,7 +62,7 @@ select{
     padding-left: 5%;
 }
 .formRecipe-block-4{
-    border: 2px solid var(--color1);
+    border: 2px solid var(--orange);
     border-radius: 7px;
     text-align: left;
     height: 55px;
@@ -72,6 +72,6 @@ select{
     width: 40%;
     height: 40px;
     border-radius: 50px;
-    background-color: var(--color1);
-    color: var(--color2);
+    background-color: var(--orange);
+    color: var(--background);
 }

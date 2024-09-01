@@ -8,6 +8,7 @@ import Account from './views/Account';
 import Recipes from './views/Recipes';
 import Dashboard from './views/Dashboard';
 import AddRecipe from './views/AddRecipe';
+import ShowRecipe from "./views/ShowRecipe";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/account" element={<Account />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/addRecipe" element={<AddRecipe />} />
+        <Route path="/showRecipe" element={<ShowRecipe />} />
       </Routes>
       <Footer />
     </Router>

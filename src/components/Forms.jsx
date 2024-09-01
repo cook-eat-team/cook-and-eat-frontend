@@ -32,30 +32,46 @@ const CreatRecipe = () => {
                             <select className="select select-bordered w-full">
                                 <option disabled selected>Unité:</option>
                                 <option>g</option>
+                                <option>kg</option>
                                 <option>ml</option>
+                                <option>cl</option>
+                                <option>litre</option>
                                 <option>cs (cuillère a soupe)</option>
                                 <option>cf (cuillère a café)</option>
+                                <option>tranches</option>
                             </select>
                             <select className="select select-bordered w-full">
                                 <option disabled selected>Unité:</option>
                                 <option>g</option>
+                                <option>kg</option>
                                 <option>ml</option>
+                                <option>cl</option>
+                                <option>litre</option>
                                 <option>cs (cuillère a soupe)</option>
                                 <option>cf (cuillère a café)</option>
+                                <option>tranches</option>
                             </select>
                             <select className="select select-bordered w-full">
                                 <option disabled selected>Unité:</option>
                                 <option>g</option>
+                                <option>kg</option>
                                 <option>ml</option>
+                                <option>cl</option>
+                                <option>litre</option>
                                 <option>cs (cuillère a soupe)</option>
                                 <option>cf (cuillère a café)</option>
+                                <option>tranches</option>
                             </select>
                             <select className="select select-bordered w-full">
                                 <option disabled selected>Unité:</option>
                                 <option>g</option>
+                                <option>kg</option>
                                 <option>ml</option>
+                                <option>cl</option>
+                                <option>litre</option>
                                 <option>cs (cuillère a soupe)</option>
                                 <option>cf (cuillère a café)</option>
+                                <option>tranches</option>
                             </select>
                         </div>
                     </div>
