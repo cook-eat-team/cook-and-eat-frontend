@@ -1,6 +1,6 @@
 import React from 'react';
-import '../style/AccountTable.css';
 import { Link } from 'react-router-dom';
+import '../style/AccountTable.css';
 
 const AccountTable = () => {
     return (
