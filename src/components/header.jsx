@@ -13,17 +13,17 @@ const Header = () => {
             </div>
             <Link to="/" className="flex items-center">
               <img
-                src="/images/logo.png" 
+                src="/images/logo.png"
                 alt="Logo"
-                className="h-12 lg:h-16" 
+                className="h-12 lg:h-16"
               />
             </Link>
           </div>
 
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
-              <li><Link to="/recipes">TOUTES LES RECETTES</Link></li>
-              <li><Link to="/moncompte">Mon compte</Link></li>
+              <li><Link to="/">TOUTES LES RECETTES</Link></li>
+              <li><Link to="/account">Mon compte</Link></li>
               <li><Link to="/dashboard">Dashboard</Link></li>
             </ul>
           </div>
