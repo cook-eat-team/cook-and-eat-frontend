@@ -1,10 +1,12 @@
-const Moncompte = () => {
-    return (
-      <div>
-        <h1>Mon compte</h1>
-      </div>
-    );
-  }
-  
-  export default Moncompte;
+import React from 'react';
+import AccountTable from "../components/AccountTable";
+const Account = () => {
+  return (
+    <div>
+      <AccountTable />
+    </div>
+  );
+};
+
+export default Account;
   
