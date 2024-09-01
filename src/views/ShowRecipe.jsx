@@ -10,8 +10,14 @@ const ShowRecipe = () => {
             <div className="desciption-title">
                 (time) min . (nb) serve
             </div>
-            <div className="container-image">
-                <img src="../images/Tartiflette.jpg" alt="Tartiflette" className="image"/>
+            <div
+                style={{
+                    backgroundImage: `url('/images/Tartiflette.jpg')`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                }}
+                className="rounded-[20px] h-64 w-full flex items-center justify-center"
+            >
             </div>
             <div className="block-text">
                 <div className="instructions">
