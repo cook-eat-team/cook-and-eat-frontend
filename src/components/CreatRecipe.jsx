@@ -1,4 +1,5 @@
-import '../style/Forms.css';
+import React from 'react';
+import '../style/CreatRecipe.css';
 const CreatRecipe = () => {
     return (
         <div class='formRecipe'>

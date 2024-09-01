@@ -24,7 +24,7 @@ const Header = () => {
             <ul className="menu menu-horizontal px-1">
               <li><Link to="/">TOUTES LES RECETTES</Link></li>
               <li><Link to="/account">Mon compte</Link></li>
-              <li><Link to="/dashboard">Dashboard</Link></li>
+              <li></li>
             </ul>
           </div>
 
@@ -42,6 +42,7 @@ const Header = () => {
                 </div>
               </div>
             </div>
+            <a className="btn"><Link to="/register">Créer un compte</Link></a>
             <a className="btn">Logout</a>
           </div>
         </div>
