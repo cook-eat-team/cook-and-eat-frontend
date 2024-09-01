@@ -3,6 +3,7 @@ import './style/App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Homepage from './views/Homepage';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Account from './views/Account';
 import Recipes from './views/Recipes';
 import Dashboard from './views/Dashboard';
@@ -21,6 +22,7 @@ function App() {
         <Route path="/addRecipe" element={<AddRecipe />} />
 
       </Routes>
+      <Footer />
     </Router>
   );
 }
