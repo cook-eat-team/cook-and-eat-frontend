@@ -1,7 +1,6 @@
-// FormRegister.jsx
+import axios from 'axios';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from '../config/axiosConfig'; // Importer depuis le fichier de configuration
 import '../style/Register.css';
 
 const FormRegister = () => {
@@ -16,7 +15,7 @@ const FormRegister = () => {
         e.preventDefault();
 
         if (password !== confirmPassword) {
-            setError("Les mots de passe ne correspondent pas.");
+            setError('Les mots de passe ne correspondent pas.');
             return;
         }
 
@@ -28,10 +27,14 @@ const FormRegister = () => {
             });
 
             console.log('Enregistrement réussi:', response.data);
+            setError(null);
             navigate('/login');
         } catch (error) {
             console.error('Erreur lors de l’enregistrement:', error.response?.data || error.message);
-            setError(error.response?.data?.message || 'Une erreur est survenue lors de l’enregistrement.');
+            setError(
+                error.response?.data?.message ||
+                'Une erreur est survenue lors de l’enregistrement. Veuillez réessayer.'
+            );
         }
     };
 
