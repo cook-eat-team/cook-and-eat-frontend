@@ -28,3 +28,23 @@
     margin-top: 15px;
     margin-bottom: 30px;
 }
+
+.input {
+    margin: 0;
+}
+
+.input:focus {
+    outline: none; /* Enlève le contour par défaut */
+    border: none;  /* Enlève la bordure */
+  }
+  
+  .input[type="password"] {
+    background-color: transparent !important; 
+    color: #333; /* Couleur du texte, si nécessaire */
+    border-radius: 0.375rem; /* Arrondissez les coins si nécessaire */
+  }
+  
+  .input[type="password"]:focus {
+    outline: none; /* Supprime le contour par défaut */ /* Couleur de bordure lors du focus, similaire aux autres inputs */
+  }
+  

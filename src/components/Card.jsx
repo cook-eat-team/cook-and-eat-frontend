@@ -7,6 +7,7 @@ const Card = () => {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
+
     axios.get('http://localhost:8000/api/recipes/')
       .then(response => {
         console.log(response.data);
@@ -31,6 +32,7 @@ const Card = () => {
           </figure>
           <div className="card-body">
             <h2 className="card-title">{recipe.title}</h2>
+
             <p className='text-card'>{recipe.description}</p>
             <div className="card-actions justify-end">
               <button className="btn">
@@ -45,3 +47,4 @@ const Card = () => {
 };
 
 export default Card;
+
