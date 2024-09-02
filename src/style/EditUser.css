@@ -1,0 +1,30 @@
+.container-form-account {
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    gap: 20px;
+}
+
+.details-account {
+    background-color: #F29C33;
+}
+
+.btn-wide {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.para-account{
+    margin-top: 50px;
+    background-color: #F29C33;
+}
+
+.delete-btn {
+    text-align: center;
+    color: red;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
