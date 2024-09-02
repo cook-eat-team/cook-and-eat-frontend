@@ -34,7 +34,20 @@ const ShowRecipe = () => {
         serving = 'N/A',
         image = '',
         description = 'Description non disponible',
-        ingredients = [],
+        ingredients = [
+            {
+                "id": 1,
+                "title": "Ingredient 1",
+                "created_at": null,
+                "updated_at": null,
+                "pivot": {
+                    "recipe_id": 11,
+                    "ingredient_id": 1,
+                    "quantity": "1.00",
+                    "unit": "g"
+                }
+            }
+        ],
         ustensils = ''
     } = recipe;
 
@@ -64,9 +77,7 @@ const ShowRecipe = () => {
                     <div className='internal-block ingredients'>
                         <h4>INGRÉDIENTS</h4>
                         <ul className='list-disc pl-5 space-y-2 text-gray-700'>
-                            {ingredients.map((ingredient) => (
-                                    <li key={ingredient.id}>{ingredient.title}</li>
-                                ))}
+                            {ingredients.title}
                         </ul>
                     </div>
                     <div className='internal-block ustensils'>
