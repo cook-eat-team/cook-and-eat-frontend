@@ -10,6 +10,7 @@
     -webkit-line-clamp: 3;
     line-height: 1.5;
     max-height: calc(1.5em * 3);
+    text-align: justify;
 }
 .btn{
     border: 1px solid var(--black);
