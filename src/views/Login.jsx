@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../AuthContext';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(''); 
   const navigate = useNavigate(); 
+  const { login } = useAuth();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -16,7 +18,9 @@ const Login = () => {
       password,
     })
     .then(response => {
-        console.log(response);
+      console.log(response);
+
+      login();
 
       const { token } = response.data;
 
