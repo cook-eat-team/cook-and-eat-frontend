@@ -1,48 +1,89 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import '../style/ShowRecipe.css';
 
 const ShowRecipe = () => {
+    const [recipe, setRecipe] = useState(null);
+    const { id } = useParams();
+
+    useEffect(() => {
+        axios.get(`http://localhost:8000/api/recipes/${id}`, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            }
+        })
+            .then(response => {
+                console.log('Data from API:', response.data);
+                setRecipe(response.data.recipes); // Assurez-vous de récupérer l'objet recipes
+            })
+            .catch(error => {
+                console.error('Erreur', error);
+            });
+    }, [id]);
+
+    if (!recipe) {
+        return <p>Chargement...</p>;
+    }
+
+    // Destructurer les propriétés avec des valeurs par défaut
+    const {
+        title = 'Titre non disponible',
+        time = 'N/A',
+        serving = 'N/A',
+        image = '',
+        description = 'Description non disponible',
+        ingredients = [
+            {
+                "id": 1,
+                "title": "Ingredient 1",
+                "created_at": null,
+                "updated_at": null,
+                "pivot": {
+                    "recipe_id": 11,
+                    "ingredient_id": 1,
+                    "quantity": "1.00",
+                    "unit": "g"
+                }
+            }
+        ],
+        ustensils = ''
+    } = recipe;
+
     return (
-        <div class='container'>
-            <div className="title">
-                <h1>PATES A LA CARBONARA</h1>
+        <div className='container'>
+            <div className='title'>
+                <h1>{title}</h1>
             </div>
-            <div className="desciption-title">
-                (time) min . (nb) serve
+            <div className='description-title'>
+                {time ? `${time} min` : 'Temps non spécifié'} . {serving ? `${serving} personnes` : 'Portions non spécifiées'}
             </div>
             <div
                 style={{
-                    backgroundImage: `url('/images/Tartiflette.jpg')`,
+                    backgroundImage: `url(${image || '/default-image.jpg'})`, // Fournissez une image par défaut si `image` est null
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                 }}
-                className="rounded-[20px] h-64 w-full flex items-center justify-center"
+                className='rounded-[20px] h-64 w-full flex items-center justify-center'
             >
             </div>
-            <div className="block-text">
-                <div className="instructions">
+            <div className='block-text'>
+                <div className='instructions'>
                     <h2>INSTRUCTIONS</h2>
-                    <p>Commencer par cuire les pommes de terre dans l'eau bouillante. Puis épluchez les et coupez les en rondelles. Émincer les oignons puis les faire dorer dans du beurre. Ajouter le jambon fumé coupé en en morceaux ainsi que les pommes de terres. Salez, poivrez à votre gout ( et celui de vos convives ) Laissez cuisiner durant environ 10 minutes puis ajouter le vin blanc. Après 5 minutes, mettre le tout dans un plat à gratin. Coupez le reblochon, soit en tranches, soit le couper en 2 dans le sens de l'épaisseur et recouvrir les pommes de terre. Cuire au four (environ 220°) durant 25 minutes. C'est prêt !</p>
+                    <p>{description}</p>
                 </div>
-                <div className="block">
-                    <div className="internal-block ingredients">
+                <div className='block'>
+                    <div className='internal-block ingredients'>
                         <h4>INGRÉDIENTS</h4>
                         <ul className='list-disc pl-5 space-y-2 text-gray-700'>
-                            <li>(quantité) (unite) (ingrédients)</li>
-                            <li>1 Reblochon</li>
-                            <li>4.5kg Pommes de terre</li>
-                            <li>2 tranches Jambon fumé</li>
-                            <li>300g Oignon</li>
-                            <li> 30cl Vin blanc sec</li>
+                            {ingredients.title}
                         </ul>
                     </div>
-                    <div className="internal-block ustensils">
+                    <div className='internal-block ustensils'>
                         <h4>L'ÉQUIPEMENT DONT VOUS AVEZ BESOIN</h4>
                         <ul className='list-disc pl-5 space-y-2 text-gray-700'>
-                            <li>Four</li>
-                            <li>plat à gratin</li>
-                            <li>couteau</li>
-                            <li>Économe</li>
+                            <li>{ustensils}</li>
                         </ul>
                     </div>
                 </div>
