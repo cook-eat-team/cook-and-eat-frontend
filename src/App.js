@@ -25,8 +25,8 @@ function App() {
         <Route path='/edit-user' element={<EditUser />} />
         <Route path="/account" element={<Account />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/addRecipe" element={<AddRecipe />} />
-        <Route path="/showRecipe" element={<ShowRecipe />} />
+        <Route path="/add-recipe" element={<AddRecipe />} />
+        <Route path="/show -recipe" element={<ShowRecipe />} />
         <Route path="/register" element={<Register />} />
       </Routes>
       <Footer />
