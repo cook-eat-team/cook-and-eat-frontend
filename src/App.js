@@ -1,6 +1,7 @@
 
 import './style/App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { AuthProvider } from './AuthContext';
 import Homepage from './views/Homepage';
 import ListingUser from './views/ListingUser';
 import EditUser from './views/EditUser';
@@ -16,21 +17,23 @@ import Login from './views/Login'
 
 function App() {
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/listing-users" element={<ListingUser />} />
-        <Route path='/edit-user' element={<EditUser />} />
-        <Route path="/account" element={<Account />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/add-recipe" element={<AddRecipe />} />
-        <Route path="/show-recipe/:id" element={<ShowRecipe />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <AuthProvider>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/listing-users" element={<ListingUser />} />
+          <Route path='/edit-user' element={<EditUser />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/add-recipe" element={<AddRecipe />} />
+          <Route path="/show-recipe/:id" element={<ShowRecipe />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </AuthProvider>
   );
 }
 

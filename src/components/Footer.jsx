@@ -1,8 +1,13 @@
 import React from "react";
+import { useAuth } from '../AuthContext';
+
 import { Link } from "react-router-dom";
 import "../style/Footer.css";
 
 const Footer = () => {
+
+  const { isAuthenticated, logout } = useAuth();
+
   return (
     <div>
       <footer className="footer bg-base-200 text-base-content p-10 footer-top">
@@ -16,10 +21,10 @@ const Footer = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <Link to="/recipes">TOUTES LES RECETTES</Link>
+              <Link to="/">Toutes les recettes</Link>
             </li>
             <li>
-              <Link to="/moncompte">Mon compte</Link>
+              {isAuthenticated && <Link to="/account">Mon compte</Link>}
             </li>
             <li>
               <Link to="/dashboard">Dashboard</Link>
