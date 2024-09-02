@@ -18,9 +18,6 @@ const CreatRecipe = () => {
                 </div>
 
                 <div class='formRecipe-block-2 block'>
-                    <div class='formRecipe-internal-blobk-2-1'>
-                        <input type="text" placeholder="Quantité:" className="input input-bordered w-full" />
-                    </div>
 
                     <div class='formRecipe-block-3'>
                         <div class='formRecipe-internal-block-3-1'>
@@ -29,7 +26,13 @@ const CreatRecipe = () => {
                             <input type="text" placeholder="Ingrédients:" className="input input-bordered w-full semi-block" />
                             <input type="text" placeholder="Ingrédients:" className="input input-bordered w-full semi-block" />
                         </div>
-                        <div class='formRecipe-internal-block-3-2'>
+                        <div class='formRecipe-internal-block-3-1'>
+                            <input type="text" placeholder="Quantité:" className="input input-bordered w-full semi-block" />
+                            <input type="text" placeholder="Quantité:" className="input input-bordered w-full semi-block" />
+                            <input type="text" placeholder="Quantité:" className="input input-bordered w-full semi-block" />
+                            <input type="text" placeholder="Quantité:" className="input input-bordered w-full semi-block" />
+                        </div>
+                        <div class='formRecipe-internal-block-3-1'>
                             <select className="select select-bordered w-full">
                                 <option disabled selected>Unité:</option>
                                 <option>g</option>
