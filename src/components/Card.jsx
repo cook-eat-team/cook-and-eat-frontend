@@ -1,19 +1,44 @@
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+
+const Card = () => {
+  const [recipes, setRecipes] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:8000/api/recipes/')
+      .then(response => {
+        console.log(response.data);  
+        setRecipes(response.data.recipes);
+      })
+      .catch(error => {
+        console.error('Erreur', error);
+      });
+  }, []);
 
 
-const Card = () =>{
-    return <> <div className="card card-compact bg-base-100 w-96 shadow-xl">
-    <figure>
-      <img
-        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-        alt="Shoes" />
-    </figure>
-    <div className="card-body">
-      <h2 className="card-title">Shoes!</h2>
-      <p>If a dog chews shoes whose shoes does he choose?</p>
-      <div className="card-actions justify-end">
-        <button className="btn btn-primary">Buy Now</button>
-      </div>
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
+      {recipes.map((recipe) => (
+        <div key={recipe.id} className="card card-compact bg-base-100 w-96 shadow-xl">
+          <figure>
+            <img 
+              src={recipe.image} 
+              alt={recipe.title} 
+              className="w-full h-48 object-cover" 
+            />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">{recipe.title}</h2>
+            <p>{recipe.description}</p>
+            <div className="card-actions justify-end">
+              <button className="btn btn-primary">Voir la recette</button>
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
-  </div></>
-}
+  );
+};
+
 export default Card;
+

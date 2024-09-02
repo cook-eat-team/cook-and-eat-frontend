@@ -27,15 +27,6 @@ const Header = () => {
                 tabIndex={0}
                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
               >
-                <li><a>TOUTES LES RECETTES</a></li>
-                <li>
-                  <a>Parent</a>
-                  <ul className="p-2">
-                    <li><Link to="/recipes">TOUTES LES RECETTES</Link></li>
-                    <li><a>Submenu 2</a></li>
-                  </ul>
-                </li>
-                <li><Link to="/moncompte">Mon compte</Link></li>
               </ul>
             </div>
             <Link to="/" className="flex items-center">
@@ -52,6 +43,7 @@ const Header = () => {
               <li><Link to="/recipes">TOUTES LES RECETTES</Link></li>
               <li><Link to="/moncompte">Mon compte</Link></li>
               <li><Link to="/dashboard">Dashboard</Link></li>
+              <li><Link to="/addRecipe">Créer une recette</Link></li>
             </ul>
           </div>
 
