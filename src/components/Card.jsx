@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import "../style/Card.css"
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import "../style/Card.css";
 
 const Card = () => {
   const [recipes, setRecipes] = useState([]);
@@ -23,17 +23,19 @@ const Card = () => {
       {recipes.map((recipe) => (
         <div key={recipe.id} className="card card-compact bg-base-100 w-96 shadow-xl">
           <figure>
-            <img 
-              src={recipe.image} 
-              alt={recipe.title} 
-              className="w-full h-48 object-cover" 
+            <img
+              src={recipe.image}
+              alt={recipe.title}
+              className="w-full h-48 object-cover"
             />
           </figure>
           <div className="card-body">
             <h2 className="card-title">{recipe.title}</h2>
-            <p class='text-card'>{recipe.description}</p>
+            <p className='text-card'>{recipe.description}</p>
             <div className="card-actions justify-end">
-            <button className="btn"><Link to="/show-recipe">VOIR RECETTE</Link></button>
+              <button className="btn">
+                <Link to={`/show-recipe/${recipe.id}`}>VOIR RECETTE</Link>
+              </button>
             </div>
           </div>
         </div>
