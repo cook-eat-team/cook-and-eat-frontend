@@ -61,7 +61,7 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <a className="btn">Logout</a>
+            <Link to="/login" className="btn">Login</Link>
           </div>
         </div>
       </header>
@@ -70,4 +70,3 @@ const Header = () => {
 };
 
 export default Header;
-

@@ -5,7 +5,7 @@ const Card = () => {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/recipes/')
+    axios.get('http://localhost:8000/api/recipes')
       .then(response => {
         console.log(response.data);  
         setRecipes(response.data.recipes);
@@ -26,6 +26,7 @@ const Card = () => {
               alt={recipe.title} 
               className="w-full h-48 object-cover" 
             />
+
           </figure>
           <div className="card-body">
             <h2 className="card-title">{recipe.title}</h2>
