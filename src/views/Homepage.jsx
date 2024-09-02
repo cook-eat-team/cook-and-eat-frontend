@@ -1,11 +1,9 @@
-import Card from "../components/Card"
-import Header from "../components/Header"
+import Card from "../components/Card";
 
-const Homepage = ()=>{
+const Homepage = () => {
     return <>
-
-    <Card/>
-
+    <h1>SAVOUREZ CHAQUE INSTANT AVEC NOS RECETTES VARIÉES !</h1>
+        <Card />
     </>
 };
 export default Homepage;
