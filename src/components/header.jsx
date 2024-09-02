@@ -26,7 +26,7 @@ const Header = () => {
 
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
-              <li><Link to="/dashboard">Dashboard</Link></li>
+              {isAuthenticated && <li><Link to="/dashboard">Dashboard</Link></li>}
               <li><Link to="/">Toutes les recettes</Link></li>
             </ul>
           </div>

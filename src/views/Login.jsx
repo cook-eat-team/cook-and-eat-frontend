@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
+import '../style/Register.css'
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -38,24 +39,33 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleLogin}>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <input 
-        type="email" 
-        value={email} 
-        onChange={(e) => setEmail(e.target.value)} 
-        placeholder="Email" 
-        required 
-      />
-      <input 
-        type="password" 
-        value={password} 
-        onChange={(e) => setPassword(e.target.value)} 
-        placeholder="Password" 
-        required 
-      />
-      <button type="submit">Login</button>
-    </form>
+    <div className="container-register">
+      <div className="form-register">
+        <form onSubmit={handleLogin}>
+          {error && <p style={{ color: 'red' }}>{error}</p>}
+
+          <h1 className='title-register'>Connexion</h1>
+          
+          <input 
+            type="email" 
+            value={email} 
+            onChange={(e) => setEmail(e.target.value)} 
+            placeholder="Email" 
+            required 
+            className="input input-bordered w-full bg-inherit"
+          />
+          <input 
+            type="password" 
+            value={password} 
+            onChange={(e) => setPassword(e.target.value)} 
+            placeholder="Password" 
+            required 
+            className="input input-bordered w-full bg-inherit"
+          />
+          <button type="submit" className="btnForm mt-10 btn-register">Login</button>
+        </form>
+      </div>
+    </div>
   );
 };
 

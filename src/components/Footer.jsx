@@ -27,7 +27,7 @@ const Footer = () => {
               {isAuthenticated && <Link to="/account">Mon compte</Link>}
             </li>
             <li>
-              <Link to="/dashboard">Dashboard</Link>
+              {isAuthenticated && <Link to="/dashboard">Dashboard</Link>}
             </li>
           </ul>
         </div>
