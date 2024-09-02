@@ -1,24 +1,57 @@
-import React from "react";
-import '../style/Login.css'
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState(''); 
+  const navigate = useNavigate(); 
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    axios.post('http://localhost:8000/api/login', {
+      email,
+      password,
+    })
+    .then(response => {
+        console.log(response);
+
+      const { token } = response.data;
+
+      localStorage.setItem('token', token);
+
+      console.log('Login successful:', response.data);
+
+
+      navigate('/');
+    })
+    .catch(error => {
+      setError(error.response?.data?.message || 'An error occurred while logging in.');
+      console.error('Error logging in:', error.response?.data || error.message);
+    });
+  };
+
   return (
-    <div className="container-login">
-      <div className="form-login">
-        <h1 className="title-login">Se connecter</h1>
-        <input
-          type="text"
-          placeholder="Email:"
-          className="input input-bordered w-full bg-inherit"
-        />
-        <input
-          type="text"
-          placeholder="Mot de passe:"
-          className="input input-bordered w-full bg-inherit"
-        />
-        <button className="btnForm mt-10 btn-register">S’enregistrer</button>
-      </div>
-    </div>
+    <form onSubmit={handleLogin}>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+      <input 
+        type="email" 
+        value={email} 
+        onChange={(e) => setEmail(e.target.value)} 
+        placeholder="Email" 
+        required 
+      />
+      <input 
+        type="password" 
+        value={password} 
+        onChange={(e) => setPassword(e.target.value)} 
+        placeholder="Password" 
+        required 
+      />
+      <button type="submit">Login</button>
+    </form>
   );
 };
 
