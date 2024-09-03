@@ -8,7 +8,7 @@ const Card = () => {
 
   useEffect(() => {
 
-    axios.get('http://localhost:8000/api/recipes/')
+    axios.get('http://localhost:8000/api/recipes/', { withCredentials: true })
       .then(response => {
         console.log(response.data);
         setRecipes(response.data.recipes);
