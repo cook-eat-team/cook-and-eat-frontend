@@ -2,6 +2,7 @@
     border-radius: 20px;
     background-color: var(--cream);
     margin-top: 100px;
+    width: 100%;
 }
 .text-card{
     display: -webkit-box;
